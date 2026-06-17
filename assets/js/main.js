@@ -1,8 +1,41 @@
-/* ========================================
-   SUGUMARAN PORTFOLIO - JAVASCRIPT (IMPROVED UI/UX)
-   ======================================== */
-
 document.addEventListener('DOMContentLoaded', function () {
+
+    // ===== Theme Settings (Light/Dark Mode) =====
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const rootEl = document.documentElement;
+
+    // Check saved theme or system preferred theme
+    const savedTheme = localStorage.getItem('sugumaran-theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+    // Set initial theme
+    setTheme(initialTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = rootEl.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    }
+
+    function setTheme(theme) {
+        rootEl.setAttribute('data-theme', theme);
+        localStorage.setItem('sugumaran-theme', theme);
+        
+        // Update Icon UI
+        if (themeToggleBtn) {
+            const icon = themeToggleBtn.querySelector('i');
+            if (icon) {
+                if (theme === 'light') {
+                    icon.className = 'bi bi-sun-fill';
+                } else {
+                    icon.className = 'bi bi-moon-stars';
+                }
+            }
+        }
+    }
 
     // ===== Create and Append Page Loader and Scroll Progress Bar dynamically if they don't exist =====
     if (!document.getElementById('scrollProgress')) {

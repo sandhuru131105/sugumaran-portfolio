@@ -2,7 +2,7 @@
    SUGUMARAN PORTFOLIO - STYLES (IMPROVED THEME & UI/UX)
    ======================================== */
 
-/* ===== CSS Variables / Design Tokens (Ultra-Modern Premium Dark Theme) ===== */
+/* ===== CSS Variables / Design Tokens (Ultra-Modern Premium Dark Theme & Light Theme) ===== */
 :root {
     --primary: #8b5cf6;          /* Vibrant Violet */
     --primary-glow: rgba(139, 92, 246, 0.15);
@@ -10,16 +10,20 @@
     --accent-glow: rgba(236, 72, 153, 0.15);
     --gradient-start: #8b5cf6;
     --gradient-end: #d946ef;     /* Fuchsia */
-    --dark-deep: #030712;        /* Dark background black */
-    --dark-card: #0b0f19;        /* Card background dark navy */
+    
+    /* Default Dark Mode Tokens */
+    --dark-deep: #030712;        
+    --dark-card: #0b0f19;        
     --dark-card-hover: #111827;
-    --border-color: #1f2937;     /* Subtly dark borders */
+    --border-color: #1f2937;     
     --border-color-hover: #374151;
-    --text-primary: #f3f4f6;     /* White/Light Gray text */
-    --text-secondary: #9ca3af;   /* Muted Gray text */
+    --text-primary: #f3f4f6;     
+    --text-secondary: #9ca3af;   
     --text-light: #6b7280;
     --bg-primary: #030712;
     --bg-secondary: #080c14;
+    --navbar-bg: rgba(3, 7, 18, 0.6);
+    --navbar-scrolled: rgba(3, 7, 18, 0.85);
     
     --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.15);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -32,6 +36,25 @@
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Premium ease-out curve */
     --font-primary: 'Outfit', sans-serif;
     --font-secondary: 'Inter', sans-serif;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+    --dark-deep: #ffffff;
+    --dark-card: #f8fafc;
+    --dark-card-hover: #f1f5f9;
+    --border-color: #e2e8f0;
+    --border-color-hover: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-light: #94a3b8;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --navbar-bg: rgba(255, 255, 255, 0.6);
+    --navbar-scrolled: rgba(255, 255, 255, 0.85);
+    --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== Global Reset & Base ===== */
@@ -119,7 +142,7 @@ a {
 #mainNavbar {
     padding: 24px 0;
     transition: var(--transition);
-    background: rgba(3, 7, 18, 0.6);
+    background: var(--navbar-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid transparent;
@@ -128,7 +151,7 @@ a {
 
 #mainNavbar.scrolled {
     padding: 14px 0;
-    background: rgba(3, 7, 18, 0.85);
+    background: var(--navbar-scrolled);
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -137,7 +160,7 @@ a {
     font-family: var(--font-primary) !important;
     font-size: 1.6rem !important;
     font-weight: 800 !important;
-    color: #ffffff !important;
+    color: var(--text-primary) !important;
     letter-spacing: -1px;
 }
 
@@ -159,8 +182,13 @@ a {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #ffffff !important;
+    color: var(--text-primary) !important;
     background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+    background: rgba(0, 0, 0, 0.03);
 }
 
 .nav-link.active::after {
@@ -174,6 +202,34 @@ a {
     background: var(--primary);
     border-radius: 50%;
     box-shadow: 0 0 10px var(--primary);
+}
+
+.btn-theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    transition: var(--transition);
+    cursor: pointer;
+    padding: 0;
+}
+
+[data-theme="light"] .btn-theme-toggle {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.btn-theme-toggle:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    transform: scale(1.05) rotate(15deg);
+    box-shadow: var(--shadow-glow);
 }
 
 .btn-contact-nav {
@@ -196,12 +252,16 @@ a {
 
 .navbar-toggler {
     border: none !important;
-    color: #fff !important;
+    color: var(--text-primary) !important;
     box-shadow: none !important;
 }
 
 .navbar-toggler-icon {
     filter: invert(1);
+}
+
+[data-theme="light"] .navbar-toggler-icon {
+    filter: invert(0);
 }
 
 /* ===== HERO SECTION ===== */
