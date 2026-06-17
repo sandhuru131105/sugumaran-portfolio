@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.getElementById('mainNavbar');
     const backToTop = document.getElementById('backToTop');
     const scrollProgressBar = document.getElementById('scrollProgress');
+    let lastScrollY = window.scrollY;
 
     function handleScroll() {
         const scrollY = window.scrollY;
@@ -97,7 +98,21 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollProgressBar.style.width = progressPercentage + '%';
         }
 
-        // Navbar scrolled appearance
+        // Hide Navbar on Scroll Down, Show on Scroll Up
+        if (navbar) {
+            // Check if mobile menu is open, if so don't hide
+            const isMobileMenuOpen = document.getElementById('navbarNav')?.classList.contains('show');
+            
+            if (scrollY > 100 && scrollY > lastScrollY && !isMobileMenuOpen) {
+                // Scroll Down
+                navbar.classList.add('nav-hidden');
+            } else {
+                // Scroll Up
+                navbar.classList.remove('nav-hidden');
+            }
+        }
+
+        // Navbar scrolled background appearance
         if (scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -111,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             backToTop.classList.remove('visible');
         }
 
+        lastScrollY = scrollY;
         updateActiveNavLink();
     }
 

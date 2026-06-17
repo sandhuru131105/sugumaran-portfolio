@@ -141,12 +141,17 @@ a {
 /* ===== NAVBAR ===== */
 #mainNavbar {
     padding: 24px 0;
-    transition: var(--transition);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s, background-color 0.4s, border-color 0.4s;
     background: var(--navbar-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid transparent;
     z-index: 1050;
+    transform: translateY(0);
+}
+
+#mainNavbar.nav-hidden {
+    transform: translateY(-100%);
 }
 
 #mainNavbar.scrolled {
