@@ -57,6 +57,19 @@
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
+/* Light mode bold/strong elements fix */
+[data-theme="light"] strong {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .hero-title {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .hero-title::before {
+    opacity: 0.1;
+}
+
 /* ===== Global Reset & Base ===== */
 * {
     margin: 0;
