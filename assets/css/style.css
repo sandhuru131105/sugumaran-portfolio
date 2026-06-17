@@ -2,7 +2,7 @@
    SUGUMARAN PORTFOLIO - STYLES (IMPROVED THEME & UI/UX)
    ======================================== */
 
-/* ===== CSS Variables / Design Tokens (Ultra-Modern Premium Dark Theme & Light Theme) ===== */
+/* ===== CSS Variables / Design Tokens (Ultra-Modern Premium Dark Theme) ===== */
 :root {
     --primary: #8b5cf6;          /* Vibrant Violet */
     --primary-glow: rgba(139, 92, 246, 0.15);
@@ -11,7 +11,7 @@
     --gradient-start: #8b5cf6;
     --gradient-end: #d946ef;     /* Fuchsia */
     
-    /* Default Dark Mode Tokens */
+    /* Strict Dark Theme Tokens */
     --dark-deep: #030712;        
     --dark-card: #0b0f19;        
     --dark-card-hover: #111827;
@@ -36,89 +36,6 @@
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Premium ease-out curve */
     --font-primary: 'Outfit', sans-serif;
     --font-secondary: 'Inter', sans-serif;
-}
-
-/* Light Mode Overrides */
-[data-theme="light"] {
-    --dark-deep: #ffffff;
-    --dark-card: #f8fafc;
-    --dark-card-hover: #f1f5f9;
-    --border-color: #e2e8f0;
-    --border-color-hover: #cbd5e1;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-light: #94a3b8;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --navbar-bg: rgba(255, 255, 255, 0.6);
-    --navbar-scrolled: rgba(255, 255, 255, 0.85);
-    --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.08);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* Light mode bold/strong elements fix */
-[data-theme="light"] strong {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .hero-title {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .hero-title::before {
-    opacity: 0.1;
-}
-
-[data-theme="light"] .skill-card h5 {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .section-title {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .stat-number {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .about-experience-badge {
-    background: rgba(255, 255, 255, 0.9) !important;
-}
-
-[data-theme="light"] .exp-text {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .project-info h4 {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .blog-content h4 {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .footer-section {
-    background: #f8fafc !important;
-    border-top: 1px solid #e2e8f0 !important;
-}
-
-[data-theme="light"] .footer-brand {
-    color: #0f172a !important;
-}
-
-[data-theme="light"] .footer-copy {
-    color: #475569 !important;
-}
-
-[data-theme="light"] .footer-social a {
-    border-color: #cbd5e1 !important;
-    color: #475569 !important;
-    background: rgba(0, 0, 0, 0.02) !important;
-}
-
-[data-theme="light"] .footer-social a:hover {
-    color: #ffffff !important;
 }
 
 /* ===== Global Reset & Base ===== */
@@ -255,11 +172,6 @@ a {
     background: rgba(255, 255, 255, 0.03);
 }
 
-[data-theme="light"] .nav-link:hover,
-[data-theme="light"] .nav-link.active {
-    background: rgba(0, 0, 0, 0.03);
-}
-
 .nav-link.active::after {
     content: '';
     position: absolute;
@@ -271,34 +183,6 @@ a {
     background: var(--primary);
     border-radius: 50%;
     box-shadow: 0 0 10px var(--primary);
-}
-
-.btn-theme-toggle {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    font-size: 1.15rem;
-    transition: var(--transition);
-    cursor: pointer;
-    padding: 0;
-}
-
-[data-theme="light"] .btn-theme-toggle {
-    background: rgba(0, 0, 0, 0.02);
-}
-
-.btn-theme-toggle:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: #ffffff;
-    transform: scale(1.05) rotate(15deg);
-    box-shadow: var(--shadow-glow);
 }
 
 .btn-contact-nav {
@@ -327,10 +211,6 @@ a {
 
 .navbar-toggler-icon {
     filter: invert(1);
-}
-
-[data-theme="light"] .navbar-toggler-icon {
-    filter: invert(0);
 }
 
 /* ===== HERO SECTION ===== */
