@@ -2,6 +2,25 @@
    SUGUMARAN PORTFOLIO - STYLES (IMPROVED THEME & UI/UX)
    ======================================== */
 
+/* ===== Custom Font: At Aero ===== */
+@font-face {
+    font-family: 'At Aero';
+    src: url('../fonts/At-Aero-Regular.woff2') format('woff2'),
+         url('../fonts/At-Aero-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'At Aero';
+    src: url('../fonts/At-Aero-Bold.woff2') format('woff2'),
+         url('../fonts/At-Aero-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ===== CSS Variables / Design Tokens (Ultra-Modern Premium Dark Theme) ===== */
 :root {
     --primary: #8b5cf6;          /* Vibrant Violet */
@@ -36,6 +55,7 @@
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Premium ease-out curve */
     --font-primary: 'Outfit', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
+    --font-hero: 'At Aero', 'Outfit', sans-serif;
 }
 
 /* ===== Global Reset & Base ===== */
@@ -284,13 +304,27 @@ a {
 }
 
 .hero-title {
-    font-family: var(--font-primary);
-    font-size: clamp(1.6rem, 4vw, 2.15rem);
+    font-family: var(--font-hero);
     font-weight: normal;
     color: #ffffff;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 24px;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
+}
+
+.hero-title-top {
+    font-size: clamp(1.25rem, 3vw, 1.5rem); /* Scales between 20px and 24px */
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.hero-title .gradient-text {
+    font-size: clamp(2.2rem, 6vw, 3rem); /* Scales between 35px and 48px */
+    font-weight: 800;
+    display: inline-block;
+    line-height: 1.1;
 }
 
 .hero-description {
