@@ -70,6 +70,57 @@
     opacity: 0.1;
 }
 
+[data-theme="light"] .skill-card h5 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .section-title {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .stat-number {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .about-experience-badge {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="light"] .exp-text {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .project-info h4 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .blog-content h4 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .footer-section {
+    background: #f8fafc !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .footer-brand {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .footer-copy {
+    color: #475569 !important;
+}
+
+[data-theme="light"] .footer-social a {
+    border-color: #cbd5e1 !important;
+    color: #475569 !important;
+    background: rgba(0, 0, 0, 0.02) !important;
+}
+
+[data-theme="light"] .footer-social a:hover {
+    color: #ffffff !important;
+}
+
 /* ===== Global Reset & Base ===== */
 * {
     margin: 0;
