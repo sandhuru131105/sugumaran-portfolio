@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===== Modern Typewriter Effect for Hero Headline =====
     const gradientTextEl = document.querySelector('.hero-title .gradient-text');
     if (gradientTextEl) {
-        const phrases = ['Digital Future.', 'Visual Stories.', 'Seamless UI/UX.', 'Brand Identities.'];
+        const phrases = ['Graphic Designer.', 'Video Editor.'];
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
